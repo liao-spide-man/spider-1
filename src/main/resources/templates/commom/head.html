@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <link rel="stylesheet"  type="text/css" th:href="@{css/head.css}" />
+    <link rel="stylesheet"  type="text/css" th:href="@{css/bootstrap.min.css}" />
+    <script th:src="@{js/jquery-3.6.4.min.js}" ></script>
+    <script th:src="@{js/bootstrap.min.js} "></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+<div class="row clearfix">
+
+
+    <div >
+
+<div class="head1" >
+    <img src="/images/a1.png"  style="width: 80px ;height: 80px" >
+    <div class="head2">
+      <div  style="font-size: 20px">曙光共享资源平台</div>
+      <div  class="text1">  我的职业课堂</div>
+    </div>
+    <div    style="font-size: 25px;margin-left: 40px "    th:if="${session}"><a href="#"   style="color: black" > 院校</a> </div>
+    <div    style="font-size: 25px ;margin-left: 35px"   th:if="${session}"><a href="#"    style="color: black"  > 课程</a> </div>
+    <div class="search">
+        <form>
+            <span >课程</span>
+            <img src="/images/img.png" >
+            <input type="text" placeholder="Search...">
+            <button type="submit"></button>
+        </form>
+    </div>
+    <div th:if="${session}"><button style="margin-left:  70px" class="btn btn-default "> <a  href="#modal-container-233594" role="button" class="btn" data-toggle="modal">登录</a></button></div>
+    <div style="margin-left: 20px">|</div>
+    <div th:if="${session}"><button  style="margin-left: 20px" class="btn btn-default " ><a  href="#modal-container-2335941" role="button" class="btn" data-toggle="modal">注册</a></button></div>
+    </div>
+
+
+
+
+</div>
+<div class="container">
+    <div class="row clearfix">
+            <div  style="margin-top: 20vh " class="modal fade " id="modal-container-233594" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel" style="text-align: center;margin-top: 10px;font-size: 20px">
+                                登录
+                            </h4>
+                        <div >
+                            <form class="form-horizontal" role="form"  style="margin-top: 20px">
+                                <div class="form-group">
+                                    <label for="firstname" class="col-sm-4 control-label">账号</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="firstname"
+                                               placeholder="请输入账号">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="col-sm-4 control-label">密码</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="lastname"
+                                               placeholder="请输入密码">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> 记住密码
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 ">
+                                        <button type="button" class="btn btn-primary" style="width: 200px;height: 50px;text-align: center">登录</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <div class="form-group">
+                          <div  style="display: flex; flex-direction: row"  ><a  style="font-size: 20px" href="#modal-container-2335941" role="button" class="btn col-sm-offset-2 " data-toggle="modal">注册</a>
+                             <a class="col-sm-offset-5"  style="font-size: 20px"  href="#">忘记密码</a>
+                          </div><div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                </div>
+            </div>
+    </div>
+
+    <div class="row clearfix">
+        <div style="margin-top: 20vh "  class="modal fade" id="modal-container-2335941" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div   class="modal-dialog">
+                <div class="modal-content">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel1" style="text-align: center;margin-top: 10px;font-size: 20px">
+                            注册
+                        </h4>
+                    <form class="form-horizontal" role="form"  style="margin-top: 20px">
+                        <div class="form-group">
+
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <input type="text" class="form-control"
+                                       placeholder="请输入账号">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <input type="text" class="form-control"
+                                       placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <input type="text" class="form-control"
+                                       placeholder="请再次输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <input type="text" class="form-control"
+                                       placeholder="请输入所在的学校">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <input type="text" class="form-control"
+                                       placeholder="请输入电话号码">
+                            </div>
+                        </div>
+                        <div class="radio col-sm-offset-5 col-sm-6">
+                            <label>
+                                <input style="height: 15px;width: 15px"  type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </svg>学生端
+                            </label>
+                        </div>
+                        <div class="radio col-sm-offset-5 col-sm-6">
+                            <label>
+                                <input  style="height: 15px;width: 15px" type="radio" name="optionsRadios" id="optionsRadios2" value="option2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-check" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493a.5.5 0 1 0-.858-.514l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226Z"/>
+                                <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+                            </svg>老师端
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 ">
+
+                                <button type="button" class="btn btn-primary" style="width: 200px;height: 50px;text-align: center;margin-top: 10px">注册</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>

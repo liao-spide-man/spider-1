@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <link rel="stylesheet"  type="text/css" th:href="@{css/index.css}" />
+  <link rel="stylesheet"  type="text/css" th:href="@{css/bootstrap.min.css}" />
+  <script th:src="@{js/jquery-3.6.4.min.js}" ></script>
+  <script th:src="@{js/bootstrap.min.js} "></script>
+
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body   >
+<div class="container">
+  <div class="row clearfix">
+
+    <div class="col-md-12 column">
+      <div >
+        <div   th:insert="~{/commom/head}"></div>
+        <div class="body1">
+
+
+
+            <div id="menu">
+              <ul>
+
+                <li>
+
+                  <a href="#">前端 	</a>
+                  <ul>
+                    <li><a href="#">HTML5</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">Javascript</a></li>
+                    <li><a href="#">Ajax</a></li>
+                    <li><a href="#">jQuery</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">后台</a>
+                  <ul>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">C++</a></li>
+                    <li><a href="#">PHP</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">C#</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">移动应用</a>
+                  <ul>
+                    <li><a href="#">Android</a></li>
+                    <li><a href="#">IOS</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">数据库</a>
+                  <ul>
+                    <li><a href="#">Oracle</a></li>
+                    <li><a href="#">MySql</a></li>
+                    <li><a href="#">SqlServer</a></li>
+                    <li><a href="#">MongoDB</a></li>
+                    <li><a href="#">DB2</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">操作系统</a>
+                  <ul>
+                    <li><a href="#">Linux</a></li>
+                    <li><a href="#">Unix</a></li>
+                    <li><a href="#">Mac</a></li>
+                    <li><a href="#">Windows</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">服务器</a>
+                  <ul>
+                    <li><a href="#">Tomcat</a></li>
+                    <li><a href="#">WebSphere</a></li>
+                    <li><a href="#">WebLogicc</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+
+
+
+
+
+
+          <div id="myCarousel" class="body3 carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner " >
+              <div class="item active">
+                <img  style="width:800px;height: 300px" src="/images/img_1.png" alt="First slide">
+
+              </div>
+              <div class="item">
+                <img style="width:800px;height: 300px" src="/images/img.png" alt="Second slide">
+
+              </div>
+              <div class="item">
+                <img  style="width: 800px;height: 300px" src="/images/a1.png" alt="Third slide">
+
+              </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+
+        </div>
+       <div class="body4">
+         <div style="margin-top: 40px;margin-left: 50px;font-size: 20px;font-family: SimHei;">系统化学习路径</div>
+         <div style="margin-top: 50px;margin-left: 50px;font-size: 15px; color: #9d9d9d">学习内容丰富多彩</div>
+       </div>
+
+        <div class="body4">
+          <div class="div1 yourDiv" >随机1</div>
+          <div class="div1" yourDiv ><button>ff</button></div>
+          <div class="div1 yourDiv" >随机1</div>
+          <div  class="div1 yourDiv">Some content</div>
+          <div  class="div1 yourDiv">Some content</div>
+          <div  class="div1 yourDiv">Some content</div>
+        </div>
+
+        <div class="body4">
+          <div style="margin-top: 40px;margin-left: 50px;font-size: 20px;font-family: SimHei;">热门课程推送</div>
+
+        </div>
+
+
+
+    </div>
+
+  </div>
+</div>
+  </div>
+
+
+</body>
+</html>
+
+
+<script >
+
+$(function (){
+
+
+
+
+
+
+  $('.yourDiv').each(function() {
+    var randomColor = getRandomColor();
+    $(this).css('background-color', randomColor);
+  });
+
+})
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+</script>
