@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <link rel="stylesheet"  type="text/css" th:href="@{css/index.css}" />
+    <link rel="stylesheet"  type="text/css" th:href="@{css/bootstrap.min.css}" />
+    <script th:src="@{js/jquery-3.6.4.min.js}" ></script>
+    <script th:src="@{js/bootstrap.min.js} "></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #content{
+            text-align:center;
+             padding-top:150px ;
+
+        }
+        #bt1{
+            background-color:greenyellow;
+            color:white;
+            width: 40px;
+            height: 25px;
+            border:0;
+            font-size: 16px;
+            box-sizing: content-box;
+            border-radius: 5px;
+        }
+        #bt1:hover{
+            background-color: #a54b4a;
+        }
+
+        #c2 {
+            margin-right: 100px; /* 增加复选框之间的水平间隔 */
+            /* margin-bottom: 10px; */ /* 增加复选框之间的垂直间隔 */
+        }
+
+    </style>
+
+</head>
+<body    >
+<div class="container">
+    <div class="row clearfix">
+
+        <div class="col-md-12 column">
+            <div >
+                <div   th:insert="~{/commom/head}"></div>
+            </div>
+        </div>
+
+        <div id = "all" style = "background-color:white; height:900px;width:1920px">
+
+
+            <!-- 设置标题栏 -->
+<!--            <div id = "header" style = "background-color:white;height:150px;width:1920px;">-->
+<!--                头部导航栏-->
+<!--            </div>-->
+
+
+            <!-- 设置左侧导航栏 -->
+            <!-- 			<div id = "left" style = "background-color:red;height:800px;width:300px;float:left">
+                        左侧导航栏
+                        </div> -->
+
+
+            <!-- 设置正文 -->
+            <div id = "content" style = "height:700px;width:1200px;float:left">
+                <img alt="50x50" src="/images/b1.png" style="margin:auto; height: 50px; width: 50px"/>
+                <a style="font-size: 50px;font-weight: bold;">广州理工学院</a>
+
+                <tr>
+                    <td colspan="2">
+                        <div align="center">
+							<textarea name="textfield3" style="resize: none" cols="120" rows="10">学校简介: 学校前身为2000年12月经省人民政府批准创办的民办天河职业学院，2001年5月经教育厅批准更名为广东职业技术师范学院天河学院，2006年4月经教育部批准转为独立学院，2011年12月通过学士学位评估，2018年12月经教育部同意更名为广东技术师范大学天河学院，2020年6月30日经教育部同意转设为广州理工学院，成为独立设置的普通本科高校，2021年5月，广州理工学院获批为广东省高校硕士学位授予立项建设单位。
+							</textarea>
+                        </div>
+                    </td>
+                </tr>
+                <div id="c2">
+                    课程:<input type="checkbox" class="c2" name="all" value="a"/>全部
+                    <input type="checkbox" class="c2" name="a1" value="b"/>工科类
+                    <input type="checkbox" class="c2" name="a2" value="c"/>人文学科类
+                    <input type="checkbox" class="c2" name="a3" value="d"/>艺术类
+                    <button id="bt1">搜索</button>
+                    <input type="text" name="username" placeholder="请输入搜索内容" maxlength="6">
+
+                </div>
+
+                <table align="center">
+                    <tr>
+
+                        <td>
+                            <a href="https://www.csdn.net/"><img src="/images/b2.jpg" style="height: 100px; width: 200px; left: 40px; top: 500px;"></a>
+                        </td>
+                        <td>
+							<textarea name="textfield3" style="resize: none" cols="80" rows="6">课程简介:java、web、python等技术，想学你就来！
+							</textarea>
+                        </td>
+                        <td><button id="bt1" type="submit" class="btn btn-default">选课</button>	</td>
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <a href="https://www.csdn.net/"><img src="/images/b2.jpg" style="height: 100px; width: 200px; left: 40px; top: 500px;"></a>
+                        </td>
+                        <td>
+						<textarea name="textfield3" style="resize: none" cols="80" rows="6">课程简介:java、web、python等技术，想学你就来！
+						</textarea>
+                        </td>
+                        <td><button id="bt1" type="submit" class="btn btn-default">选课</button>	</td>
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <a href="https://www.csdn.net/"><img src="/images/b2.jpg" style="height: 100px; width: 200px; left: 40px; top: 500px;"></a>
+                        </td>
+                        <td>
+						<textarea name="textfield3" style="resize: none" cols="80" rows="6">课程简介:java、web、python等技术，想学你就来！
+						</textarea>
+                        </td>
+                        <td><button id="bt1" type="submit" class="btn btn-default">选课</button>	</td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+            <!-- 设置底部 -->
+            <!-- 	<div id = "foot" style = "background-color:green;height:100px;width:1620px;float:left">
+                底部信息
+                </div> -->
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+<script >
+
+    $(function (){
+
+
+
+
+
+
+        $('.yourDiv').each(function() {
+            var randomColor = getRandomColor();
+            $(this).css('background-color', randomColor);
+        });
+
+    })
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+
+</script>
